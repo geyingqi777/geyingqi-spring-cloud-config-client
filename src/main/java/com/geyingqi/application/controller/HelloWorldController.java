@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "hello")
-// 支持手动刷新从config server读取的配置的注解,调用http://xxxx/refresh手动刷新配置
+// 支持手动刷新从config server读取的配置的注解,要用post方式,调用http://xxxx/actuator/refresh,手动刷新配置
 @RefreshScope
 public class HelloWorldController {
     @Value("${geyingqi.name}")
