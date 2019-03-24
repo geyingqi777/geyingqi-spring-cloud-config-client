@@ -1,6 +1,7 @@
 package com.geyingqi.application.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "hello")
+// 支持手动刷新从config server读取的配置的注解,调用http://xxxx/refresh手动刷新配置
+@RefreshScope
 public class HelloWorldController {
     @Value("${geyingqi.name}")
     private String value;
