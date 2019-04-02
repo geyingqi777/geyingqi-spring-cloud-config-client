@@ -6,8 +6,6 @@
 spring:
   cloud:
     config:
-      # 对应配置url中的{profile}
-#      profile: dev
       # 对应配置url中的{baseuri}
       uri: http://127.0.0.1:9999/
       # 对应配置url中的{label}
@@ -15,3 +13,6 @@ spring:
   application:
     # 对应配置url中的{application}
     name: geyingqiconfig
+  profiles:
+    # 对应配置url中的{profile}
+    active: dev
